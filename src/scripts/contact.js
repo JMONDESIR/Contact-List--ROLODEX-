@@ -5,7 +5,22 @@
 // });
 const contact = {
   makeDOM(contactObject) {
-    console.table(contactObject);
+    console.log(contactObject);
+
+    let docFrag = document.createDocumentFragment();
+
+    let contactName = document.createElement("h2");
+    let contactPhone = document.createElement("h5");
+    let contactAddress = document.createElement("h5");
+
+    contactName.textContent = contactObject.name;
+    contactPhone.textContent = contactObject.phone;
+    contactAddress.textContent = contactObject.address;
+
+    docFrag.appendChild(contactName);
+    docFrag.appendChild(contactPhone);
+    docFrag.appendChild(contactAddress);
+    return docFrag;
   }
 };
 
