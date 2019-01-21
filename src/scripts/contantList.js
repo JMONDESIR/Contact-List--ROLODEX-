@@ -7,9 +7,15 @@ import contact from "./contact";
 const contactList = {
   getAndAppendContacts() {
     contactCollection.getContacts().then(function(contactArray) {
+      let bigDocFrag = document.createDocumentFragment();
       contactArray.forEach(function(eachContact) {
-        contact.makeDOM(eachContact);
+        let thingy = contact.makeDOM(eachContact);
+        bigDocFrag.appendChild(thingy);
+        console.log(thingy);
       });
+      let formContainer = document.querySelector(".form");
+      let displayContainer = document.querySelector(".output");
+      displayContainer.appendChild(bigDocFrag);
     });
   }
 };
