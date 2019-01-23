@@ -6,19 +6,21 @@ import contact from "./contact";
 
 const contactList = {
   getAndAppendContacts() {
-    contactCollection.getContacts().then(function(contactArray) {
-      let bigDocFrag = document.createDocumentFragment();
 
-      contactArray.forEach(function(eachContact) {
-        let thingy = contact.makeDOM(eachContact);
-        bigDocFrag.appendChild(thingy);
-        console.log(thingy);
+    contactCollection.getContacts()
+      .then(function (contactArray) {
+        let displayContainer = document.querySelector(".output");
+        displayContainer.textContent = "";
+        let bigDocFrag = document.createDocumentFragment();
+
+        contactArray.forEach(function (eachContact) {
+          let thingy = contact.makeDOM(eachContact);
+          bigDocFrag.appendChild(thingy);
+          console.log(thingy);
+        });
+
+        displayContainer.appendChild(bigDocFrag);
       });
-
-      let displayContainer = document.querySelector(".output");
-
-      displayContainer.appendChild(bigDocFrag);
-    });
   }
 };
 
