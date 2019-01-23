@@ -2,6 +2,6 @@
 import contactList from "./contantList";
 import contactForm from "./contactForm";
 
-contactForm.formBuilder();
 contactList.getAndAppendContacts();
+contactForm.formBuilder();
 //--------------------------------------------------------------------------------------
