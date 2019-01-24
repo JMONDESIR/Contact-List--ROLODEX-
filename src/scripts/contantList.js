@@ -16,7 +16,15 @@ const contactList = {
         contactArray.forEach(function (eachContact) {
           let thingy = contact.makeDOM(eachContact);
           bigDocFrag.appendChild(thingy);
+          const deleteButton = document.createElement("button")
+          deleteButton.textContent = "DELETE"
+          deleteButton.setAttribute("id", "#deleteButton")
+          const editButton = document.createElement("button")
+          editButton.textContent = "EDIT"
+          editButton.setAttribute("id", "#editButton")
           console.log(thingy);
+          bigDocFrag.appendChild(deleteButton);
+          bigDocFrag.appendChild(editButton);
         });
 
         displayContainer.appendChild(bigDocFrag);

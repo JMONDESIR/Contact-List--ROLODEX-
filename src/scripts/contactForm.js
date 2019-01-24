@@ -39,10 +39,10 @@ const contactForm = {
     //--------------------------------------------------------------
 
     // EVENT HANDLER
-    let button = document.createElement("button");
-    button.textContent = "SUBMIT";
-    formFrag.appendChild(button);
-    button.addEventListener("click", this.eventHandler);
+    let submitButton = document.createElement("button");
+    submitButton.textContent = "SUBMIT";
+    formFrag.appendChild(submitButton);
+    submitButton.addEventListener("click", this.eventHandler);
   },
   eventHandler() {
     let ContactName = document.querySelector("#name_Input").value;
@@ -54,11 +54,12 @@ const contactForm = {
       phone: ContactNumber,
       address: ContactAddress
     };
-    contactCollection.addContact(newContact).then(response => {
-      contactList.getAndAppendContacts();
+    contactCollection.addContact(newContact)
+      .then(response => {
+        contactList.getAndAppendContacts();
 
-      //--------------------------------------------------------------
-    });
+        //--------------------------------------------------------------
+      });
   }
 };
 

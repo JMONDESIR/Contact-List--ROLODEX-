@@ -5,13 +5,11 @@
 // });
 const contact = {
   makeDOM(contactObject) {
-    console.log(contactObject);
-
     let docFrag = document.createDocumentFragment();
 
     let contactName = document.createElement("h2");
-    let contactPhone = document.createElement("h5");
-    let contactAddress = document.createElement("h5");
+    let contactPhone = document.createElement("span");
+    let contactAddress = document.createElement("p");
 
     contactName.textContent = contactObject.name;
     contactPhone.textContent = contactObject.phone;
