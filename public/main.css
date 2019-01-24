@@ -1,3 +1,14 @@
-button {
-  background-color: lightgreen;
-}
+submitButton {
+    background-color: lightsalmon;
+    margin: 5px;
+   }
+
+   #deleteButton {
+  backgroung-color: red;
+  margin: 5px;
+   }
+
+   #editButton {
+    backgroung-color: rgb(0, 132, 255);
+    margin: 5px;
+   }  

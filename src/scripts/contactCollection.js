@@ -2,7 +2,7 @@
 
 const contactCollection = {
   getContacts() {
-    return fetch("http://localhost:8088/contacts").then(function(response) {
+    return fetch("http://localhost:8088/contacts").then(function (response) {
       return response.json();
     });
   },
@@ -14,6 +14,9 @@ const contactCollection = {
       },
       body: JSON.stringify(addNewContact)
     });
+  },
+  deleteContact() {
+
   }
 };
 export default contactCollection;
