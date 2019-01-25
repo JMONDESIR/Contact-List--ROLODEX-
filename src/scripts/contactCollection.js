@@ -6,6 +6,7 @@ const contactCollection = {
       return response.json();
     });
   },
+
   addContact(addNewContact) {
     return fetch("http://localhost:8088/contacts", {
       method: "POST",
@@ -15,8 +16,15 @@ const contactCollection = {
       body: JSON.stringify(addNewContact)
     });
   },
-  deleteContact() {
 
+  deleteContact(id) {
+    return fetch(`http://localhost:8088/contacts/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
   }
-};
+}
+
 export default contactCollection;

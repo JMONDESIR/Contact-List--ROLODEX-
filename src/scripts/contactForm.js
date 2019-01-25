@@ -57,10 +57,8 @@ const contactForm = {
     contactCollection.addContact(newContact)
       .then(response => {
         contactList.getAndAppendContacts();
-
-        //--------------------------------------------------------------
       });
-  }
+  },
 };
 
 export default contactForm;

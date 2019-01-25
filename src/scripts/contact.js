@@ -3,23 +3,23 @@
 // contactArray.forEach(function(eachContact) {
 //   console.log(eachContact);
 // });
-const contact = {
-  makeDOM(contactObject) {
-    let docFrag = document.createDocumentFragment();
 
-    let contactName = document.createElement("h2");
-    let contactPhone = document.createElement("span");
-    let contactAddress = document.createElement("p");
+export default function makeDOM(contactObject, id) {
+  let docFrag = document.createDocumentFragment();
+  let card = document.createElement("div")
+  card.setAttribute("id", id)
+  let contactName = document.createElement("h2");
+  let contactPhone = document.createElement("span");
+  let contactAddress = document.createElement("p");
 
-    contactName.textContent = contactObject.name;
-    contactPhone.textContent = contactObject.phone;
-    contactAddress.textContent = contactObject.address;
+  contactName.textContent = contactObject.name;
+  contactPhone.textContent = contactObject.phone;
+  contactAddress.textContent = contactObject.address;
 
-    docFrag.appendChild(contactName);
-    docFrag.appendChild(contactPhone);
-    docFrag.appendChild(contactAddress);
-    return docFrag;
-  }
-};
+  card.appendChild(contactName);
+  card.appendChild(contactPhone);
+  card.appendChild(contactAddress);
 
-export default contact;
+  docFrag.appendChild(card)
+  return docFrag;
+}
